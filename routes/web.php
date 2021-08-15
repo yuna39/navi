@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('shop/create', 'Admin\ShopController@add');
-    Route::get('shop/edit', 'Admin\ShopController@edit');
+    Route::get('shop/create', 'Admin\ShopController@add')->middleware('auth');
+    Route::post('shop/create', 'Admin\ShopController@create');
+    Route::get('shop/edit', 'Admin\ShopController@edit')->middleware('auth');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
