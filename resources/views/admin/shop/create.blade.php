@@ -21,7 +21,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">店名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
                     
@@ -29,7 +29,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">紹介文</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
                     
@@ -37,7 +37,7 @@
                     <div class="form-group row">
                         <label class="col-md-5">お店の画像</label>
                         <div class="col-md-7">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image_shop">
                         </div>
                     </div>
                     
@@ -45,7 +45,7 @@
                     <div class="form-group row">
                         <label class="col-md-5">メニュー画像</label>
                         <div class="col-md-7">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image_menu">
                         </div>
                     </div>
                     

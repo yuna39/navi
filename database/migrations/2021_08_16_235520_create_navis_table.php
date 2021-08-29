@@ -26,7 +26,7 @@ class CreateNavisTable extends Migration
             $table->string('image_shop')->nullable();
             
             // お店のメニュー画像
-            $table->string('image_mes')->nullable();
+            $table->string('image_menu')->nullable();
             
             $table->timestamps();
         });
