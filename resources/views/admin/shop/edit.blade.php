@@ -35,7 +35,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $navi_form->image_path }}
+                                設定中: {{ $navi_form->image_shop }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -49,7 +49,6 @@
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $navi_form->id }}">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="更新">
                         </div>
                     </div>
                     
@@ -58,7 +57,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $navi_form->image_path }}
+                                設定中: {{ $navi_form->image_menu }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">

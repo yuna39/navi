@@ -28,9 +28,9 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
-                                <th width="30%">店名</th>
-                                <th width="600%">紹介</th>
+                                <th width="5%">ID</th>
+                                <th width="20%">店名</th>
+                                <th width="40%">紹介</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +39,14 @@
                                     <th>{{ $navi->id }}</th>
                                     <td>{{ \Str::limit($navi->name, 100) }}</td>
                                     <td>{{ \Str::limit($navi->introduction, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\ShopController@edit', ['id' => $navi->id])  }}" role="button" class="btn btn-primary">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\ShopController@delete', ['id' => $navi->id]) }}" role="button" class="btn btn-primary">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

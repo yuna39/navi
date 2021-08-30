@@ -103,12 +103,12 @@ class ShopController extends Controller
         $navi_form = $request->all();
         
         if ($request->remove == 'true') {
-            $navi_form['image_path'] = null;
+            $navi_form['image_shop'] = null;
         } elseif ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
-            $navi_form['image_path'] = basename($path);
+            $navi_form['image_shop'] = basename($path);
         } else {
-            $navi_form['image_path'] = $navi->image_path;
+            $navi_form['image_shop'] = $navi->image_shop;
         }
         
         unset($navi_form['image']);
@@ -119,6 +119,16 @@ class ShopController extends Controller
         $navi->fill($navi_form)->save();
         
         return redirect('admin/shop');
+    }
+    
+    // 削除
+    public function delete(Request $request)
+    {
+        // 該当するNaviモデルを取得
+        $navi = Navi::find($request->id);
+        // 削除
+        $navi->delete();
+        return redirect('admin/shop/');
     }
     
 }

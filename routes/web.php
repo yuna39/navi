@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('shop/create', 'Admin\ShopController@create');
     Route::get('shop/edit', 'Admin\ShopController@edit')->middleware('auth');
     Route::post('shop/edit', 'Admin\ShopController@update')->middleware('auth');
+    Route::get('shop/delete', 'Admin\ShopController@delete')->middleware('auth');
     Route::get('shop', 'Admin\ShopController@index')->middleware('auth');
 });
 
