@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Navi;
+use App\History;
+use Carbon\Carbon;
 
 class ShopController extends Controller
 {
@@ -115,8 +117,13 @@ class ShopController extends Controller
         unset($navi_form['remove']);
         unset($navi_form['_token']);
         
-        // 該当するデータを上書きして保存する
+         // 該当するデータを上書きして保存する
         $navi->fill($navi_form)->save();
+        
+        $history = new History;
+        $history->navi_id = $navi->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
         
         return redirect('admin/shop');
     }

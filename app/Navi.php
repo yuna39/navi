@@ -12,5 +12,11 @@ class Navi extends Model
     public static $rules = array(
         'name' => 'required',
         'introduction' => 'required',
-        );
+    );
+    
+    public function histories()
+    {
+        return $this->hasMany('App\History');
+    }
+        
 }
